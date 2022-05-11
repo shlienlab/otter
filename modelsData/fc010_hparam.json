@@ -1,0 +1,12 @@
+{
+    "model_name": "fc010",
+    "params": {
+        "conv_hid_uni_mult": 3,
+        "conv_kernel_size": 4.0,
+        "conv_pool_layers": 3,
+        "dense_dropout": 0.4,
+        "dense_hid_uni_mult": 2,
+        "dense_layers": 3,
+        "first_conv": null
+    }
+}

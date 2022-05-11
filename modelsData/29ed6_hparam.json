@@ -1,0 +1,12 @@
+{
+    "model_name": "29ed6",
+    "params": {
+        "conv_hid_uni_mult": 1.2734272875920687,
+        "conv_kernel_size": 2.0,
+        "conv_pool_layers": 1,
+        "dense_dropout": 0.4042819449397369,
+        "dense_hid_uni_mult": 1.4864166165212092,
+        "dense_layers": 1,
+        "first_conv": 4
+    }
+}
