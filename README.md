@@ -19,9 +19,19 @@ To run the pre-trained classifier on your expression samples for inference pleas
 There are two main files, `otter_train.py` allows you to train a single CNN model at a time, `otter_predict.py` allows you to run inference with an ensemble of trained models.
 
 ```
-python otter_train.py --data to_train.h5 --labels input_labels.h5 --output output_folder --hparam hyperparameters.json --epochs 50 --batchsize 64 --patience 3 --split .2 --lowvar .99
+python otter_train.py --data to_train.h5 
+	--labels input_labels.h5 
+	--hparam hyperparameters.json 
+	--epochs 50 
+	--batchsize 64 
+	--patience 3 
+	--split .2 
+	--lowvar .99
+	--output output_folder 
 
-python otter_predict.py --data to_predict.h5 --outputo output_folder --models models_folder
+python otter_predict.py --data to_predict.h5 
+	--models models_folder
+	--output output_folder 
 ```
 
 `-h`, `--help` will summon a help message with details on the available options.
