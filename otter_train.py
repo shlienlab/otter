@@ -82,9 +82,6 @@ if __name__ == "__main__":
     labels = labels.loc[~(labels==0).all(axis=1)]
     df     = df.loc[labels.index]
 
-    df = df.iloc[:100,:100]
-    labels = labels.iloc[:100,:10]
-
     print('done!')
 
     print('Input data size: {:d}x{:d}'.format(*df.shape))
