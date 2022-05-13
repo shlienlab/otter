@@ -4,7 +4,6 @@
     @F. Comitani 2018-2022
 """
 
-from __future__ import print_function
 import os
 import argparse
 import pickle
@@ -74,8 +73,6 @@ if __name__ == "__main__":
 
     print("Loading data...", end="")
 
-    path = os.getcwd()
-
     df     = pd.read_hdf(args.data)
     labels = pd.read_hdf(args.labels)
     labels = labels.loc[df.index]
@@ -84,6 +81,9 @@ if __name__ == "__main__":
 
     labels = labels.loc[~(labels==0).all(axis=1)]
     df     = df.loc[labels.index]
+
+    df = df.iloc[:100,:100]
+    labels = labels.iloc[:100,:10]
 
     print('done!')
 
@@ -101,6 +101,7 @@ if __name__ == "__main__":
 
         print('New input data size: {:d}x{:d}'.format(*df.shape))
 
+    features = df.columns
 
     """ Fit and save a standard scaler. """
 
@@ -110,7 +111,7 @@ if __name__ == "__main__":
     df     = s_scale.fit_transform(df)
 
     with open(os.path.join(outpath, 's_scaler.pkl'), 'wb') as handle:
-        pickle.dump(s_scale, handle, protocol=-1)
+        pickle.dump((s_scale,features), handle, protocol=-1)
 
     x_train   = df.reshape(df.shape[0], df.shape[1],1).astype('float32')
     y_train   = labels.values
@@ -150,9 +151,7 @@ if __name__ == "__main__":
     with open(os.path.join(outpath, hparam['model_name']+'_history.pkl'), 'wb') as handle:
         pickle.dump(history, handle, protocol=-1)
 
-    save_model(model, os.path.join(outpath, hparam['model_name']+'_trained'))
-    #or directly save with model.save 
-    #model.save(os.path.join(outpath, name+'_trained.h5'))
+    model.save(os.path.join(outpath, hparam['model_name']+'_trained.h5'))
 
     """ Plot change in performance scores during training. """
 
@@ -161,4 +160,5 @@ if __name__ == "__main__":
     plot_history(history,'loss', outpath)
    
     print('done!')
+    
     print('\nAll Done!')

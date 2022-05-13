@@ -15,7 +15,7 @@ from keras import backend as K
 #config = tf.ConfigProto(device_count={"CPU": 8})
 #keras.backend.tensorflow_backend.set_session(tf.Session(config=config))
 
-from keras.models import Sequential
+from keras.models import Sequential, model_from_json
 from keras.layers import Dense, Dropout, Flatten, Conv1D, MaxPooling1D, BatchNormalization
 from keras.optimizers import Adadelta
 from keras.callbacks import EarlyStopping, ModelCheckpoint
@@ -176,50 +176,6 @@ def train(model, traindata, valdata=None, epochs = 50, batchsize = 64, patience 
         print('Best Recall:', max(fitting['val_recall']))
 
     return fitting
-
-
-def save_model(model, name):
-    """ Save a Keras model to a JSON file (architecture)
-        and an hdf5 (weights) file.
-
-    Args: 
-        model (Keras obj): the keras model to save.
-        name (str): the name of the file where the model
-            will be saved.
-    """
-    
-    """ Serialize the model to JSON. """
-
-    model_json = model.to_json()
-    with open(name+".json", "w") as json_file:
-            json_file.write(model_json)
-    
-    """ Write the weights to disk. """
-    model.save_weights(name+".h5")
-    
-
-def load_model(json_filename, weights_filename):
-    
-    """ Load a Keras model from a JSON file (architecture)
-        and an hdf5 (weights) file.
-
-    Args:
-        name (str): name of the files to load.
-
-    """
-
-    from keras.models import model_from_json
-        
-    """ Load JSON and create model. """
-
-    json_file = open(json_filename, "r")
-    loaded_model_json = json_file.read()
-    json_file.close()
-    loaded_model = model_from_json(loaded_model_json)
-    
-    """ Load trained weights into the new model. """
-
-    loaded_model.load_weights(weights_filename)
     
 def plot_history(history, metric, path='./'):
     """ Plot the change in a given metric 

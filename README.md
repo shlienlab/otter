@@ -14,6 +14,20 @@ For details on how it works and its aims, please see the publication at the end 
 
 To run the pre-trained classifier on your expression samples for inference please visit our [OTTER web app](https://otter.ccm.sickkids.ca/)
 
+### How it works
+
+There are two main files, `otter_train.py` allows you to train a single CNN model at a time, `otter_predict.py` allows you to run inference with an ensemble of trained models.
+
+```
+python otter_train.py --data to_train.h5 --labels input_labels.h5 --output output_folder --hparam hyperparameters.json --epochs 50 --batchsize 64 --patience 3 --split .2 --lowvar .99
+
+python otter_predict.py --data to_predict.h5 --outputo output_folder --models models_folder
+```
+
+`-h`, `--help` will summon a help message with details on the available options.
+
+The output is a pandas dataframe with the prediction probabilities. The Youden correction awill have to be applied independently after calculating the proper index. 
+
 ### Dependencies
 
 The classifiers were originally built and trained with the following libraries.
@@ -23,7 +37,7 @@ More recent versions can be used, but beware you will need to update the code ac
 - scikit-learn	== 0.22.1
 - tensorflow	== 1.12.0
 - keras		== 2.2.4
-- hyperopt		== 0.1.1
+- hyperopt	== 0.1.1
 ```
 
 ### Citation
