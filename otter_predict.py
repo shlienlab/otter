@@ -1,5 +1,5 @@
-""" Minimal script to build and train a single CNN with Keras
-    and Tensorflow (v1.12).
+""" Minimal script for inference with 
+    an ensemble of CNN (OTTER).
 
     @F. Comitani 2018-2022
 """

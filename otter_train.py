@@ -105,7 +105,7 @@ if __name__ == "__main__":
     print("Scaling...", end="")
 
     s_scale = StandardScaler()
-    df     = s_scale.fit_transform(df)
+    df      = s_scale.fit_transform(df)
 
     with open(os.path.join(outpath, 's_scaler.pkl'), 'wb') as handle:
         pickle.dump((s_scale,features), handle, protocol=-1)

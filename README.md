@@ -36,7 +36,17 @@ python otter_predict.py --data to_predict.h5
 
 `-h`, `--help` will summon a help message with details on the available options.
 
-The output is a pandas dataframe with the prediction probabilities. The Youden correction awill have to be applied independently after calculating the proper index. 
+The output is a pandas dataframe with the prediction probabilities. 
+If the target classes were produced with RACCOON and a `final_tree.json` file containing information on the hierarchy is available,
+the probabilities can be further adjustes with `postprocess.py`. This script also allows you to recenter the probabilities midpoint
+according to the Youden indices if these has been calculated and saved to a pickle `calibration_weights.pkl`.
+
+```
+python postprocess.py --pred predictions.h5
+	--nodes final_tree.json
+	--calibration calibration_weights.pkl
+	--output output_folder 
+```
 
 ### Dependencies
 
