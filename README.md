@@ -3,16 +3,15 @@
 ## Oncological TranscripTomE Recognition
 ### v 1.0
 
-[![Licence](https://img.shields.io/github/license/fcomitani/otter?style=flat-square)](https://github.com/fcomitani/otter/blob/main/LICENSE)
-<!--
-[![GitHub top language](https://img.shields.io/github/languages/top/fcomitani/otter?style=flat-square)](https://github.com/fcomitani/otter/search?l=python)
-%[![Documentation Status](https://readthedocs.org/projects/aroughcun/badge/?version=latest&style=flat-square)](https://aroughcun.readthedocs.io/en/latest/?badge=latest)
--->
+[![Licence](https://img.shields.io/github/license/shlienlab/otter?style=flat-square)](https://github.com/shlienlab/otter/blob/main/LICENSE)
+[![GitHub top language](https://img.shields.io/github/languages/top/shlienlab/otter?style=flat-square)](https://github.com/shlienlab/otter/search?l=python)
 
 This repository contains code to train and run OTTER v1.0, an ensemble of CNN for transcriptome-based classification of tumour subtypes.
 For details on how it works and its aims, please see the publication at the end of this file.
 
 To run the pre-trained classifier on your expression samples for inference please visit our [OTTER web app](https://otter.ccm.sickkids.ca/)
+
+Please make sure to read our [licence](https://github.com/shlienlab/otter/blob/main/LICENSE.txt) before using the files contained in this repository.
 
 ### How it works
 
@@ -64,5 +63,5 @@ More recent versions can be used, but beware you will need to update the code ac
 
 When using these files or the associated web app, please cite
 
-> F. Comitani, J. O. Nash, S. Cohen-Gogo, A. Chang, T. T. Wen, A. Maheshwari, B. Goyal, E. S. L. Tio, K. Tabatabaei, L. Brunga, J. E. G. Lawrence, P. Balogh, A. Flanagan, S. Teichmann, V. Ramaswamy, J. Hitzler, J. Wasserman, R. A. Gladdy, B. C. Dickson, U. Tabori, M. J. Cowley, S. Behjati, D. Malkin, A. Villani, M. S. Irwin and A. Shlien, "Multi-scale transcriptional clustering and heterogeneity analysis reveal diagnostic classes of childhood cancer" (under review). 
+> F. Comitani, J. O. Nash, S. Cohen-Gogo, A. Chang, T. T. Wen, A. Maheshwari, B. Goyal, E. S. L. Tio, K. Tabatabaei, R. Zhao, L. Brunga, J. E. G. Lawrence, P. Balogh, A. Flanagan, S. Teichmann, B. Ho, A. Huang, V. Ramaswamy, J. Hitzler, J. Wasserman, R. A. Gladdy, B. C. Dickson, U. Tabori, M. J. Cowley, S. Behjati, D. Malkin, A. Villani, M. S. Irwin and A. Shlien, "Multi-scale transcriptional clustering and heterogeneity analysis reveal diagnostic classes of childhood cancer" (under review).
 
