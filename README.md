@@ -1,12 +1,13 @@
 <img src="img/logo_ot.png" width=400, padding=100>
 
 ## Oncological TranscripTomE Recognition
-### v 1.0
+### v 1.0.0
 
-[![Licence](https://img.shields.io/github/license/shlienlab/otter?style=flat-square)](https://github.com/shlienlab/otter/blob/main/LICENSE)
-[![GitHub top language](https://img.shields.io/github/languages/top/shlienlab/otter?style=flat-square)](https://github.com/shlienlab/otter/search?l=python)
+[![GitHub tag (latest by date)](https://img.shields.io/github/v/tag/shlienlab/otter)](https://github.com/shlienlab/otter/releases/tag/v1.0.0)
+[![Licence](https://img.shields.io/github/license/shlienlab/otter)](https://github.com/shlienlab/otter/blob/main/LICENSE)
+[![GitHub top language](https://img.shields.io/github/languages/top/shlienlab/otter)](https://github.com/shlienlab/otter/search?l=python)
 
-This repository contains code to train and run OTTER v1.0, an ensemble of CNN for transcriptome-based classification of tumour subtypes.
+This repository contains code to train and run OTTER v1.0.0, an ensemble of CNN for transcriptome-based classification of tumour subtypes.
 For details on how it works and its aims, please see the publication at the end of this file.
 
 To run the pre-trained classifier on your expression samples for inference please visit our [OTTER web app](https://otter.ccm.sickkids.ca/)
